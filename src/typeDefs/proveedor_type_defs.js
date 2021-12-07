@@ -28,15 +28,15 @@ const proveedorTypeDefs = gql`
         telefono         : Int!
     }
 
-    extend type Query{
-        proveedorById(laboratorio:String!)             : Proveedor
+    type Query{
+        proveedorByLaboratorio(laboratorio:String!)    : Proveedor
         proveedorListByLaboratorio(laboratorio:String!): ProveedorList
     }    
 
-    extend type Mutation{
-        createProduct(proveedor: Proveedor!)      : Proveedor
-        updateProduct(proveedor: ProveedorUpdate!): Proveedor
-        deleteProduct(id:String!)                 : String!
+    type Mutation{
+        createProveedor(proveedor: Proveedor!)      : Proveedor
+        updateProveedor(proveedor: ProveedorUpdate!): Proveedor
+        deleteProveedor(id:String!)                 : String!
     }   
 `;
 

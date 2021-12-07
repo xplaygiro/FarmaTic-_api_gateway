@@ -35,12 +35,12 @@ const productTypeDefs = gql `
         cantidad         : Int!
     }
 
-    extend type Query{
+    type Query{
         productById(id:String!): Product
         inventarioByMedicamento(nombreMedicamento:String!): Inventario
     }    
 
-    extend type Mutation{
+    type Mutation{
         createProduct(producto: Product!): Product
         updateProduct(producto: ProductUpdate!): Product
         deleteProduct(laboratorio:String!): String!
