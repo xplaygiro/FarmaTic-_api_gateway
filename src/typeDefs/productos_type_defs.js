@@ -37,7 +37,7 @@ const productTypeDefs = gql `
 
     extend type Query{
         productById(id:String!): Product
-        inventarioByMedicamento(nombreMedicamento:String!): Product
+        inventarioByMedicamento(nombreMedicamento:String!): Inventario
     }    
 
     extend type Mutation{

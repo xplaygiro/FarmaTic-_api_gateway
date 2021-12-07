@@ -20,14 +20,23 @@ const proveedorTypeDefs = gql`
         celular         : Int;
     }
 
+    type ProveedorList {
+        id               : String!
+        laboratorio      : String!
+        nombreDeContacto : String!
+        email            : String!
+        telefono         : Int!
+    }
+
     extend type Query{
-        productById(laboratorio:String!): proveedor
+        proveedorById(laboratorio:String!)             : Proveedor
+        proveedorListByLaboratorio(laboratorio:String!): ProveedorList
     }    
 
     extend type Mutation{
-        createProduct(proveedor: Proveedor!): Proveedor
+        createProduct(proveedor: Proveedor!)      : Proveedor
         updateProduct(proveedor: ProveedorUpdate!): Proveedor
-        deleteProduct(id:String!): String!
+        deleteProduct(id:String!)                 : String!
     }   
 `;
 

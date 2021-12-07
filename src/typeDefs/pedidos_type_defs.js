@@ -26,8 +26,6 @@ const orderTypeDefs = gql`
 
     extend type Mutation{
         createPedido(pedido: Pedido!): Pedido
-        updatePedido(pedido: PedidoUpdate!): Pedido
-        deletePedido(id:String!): String!
     }   
 
 `;
