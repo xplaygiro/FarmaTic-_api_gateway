@@ -23,9 +23,9 @@ class InventarioAPI extends RESTDataSource {
         return await this.delete(`/proveedores/${id}/`);
     }
     
-    //async getProveedorByLaboratorio(laboratorio){
-    //    return await this.get(`/proveedores/${laboratorio}/`);
-    //}
+    async getProveedorByLaboratorio(laboratorio){
+        return await this.get(`/proveedores/${laboratorio}/`);
+    }
     
     async getListProveedor(laboratorio){
         return await this.get(`/proveedores/${laboratorio}`);
