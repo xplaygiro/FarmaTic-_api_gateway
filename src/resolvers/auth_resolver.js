@@ -17,12 +17,12 @@ const usersResolver = {
                 username: userInput.username,
                 password: userInput.password
             }
-            await dataSources.authAPI.createUser(authInput);
+            return await dataSources.authAPI.createUser(authInput);
         },
-        logIn:(_, {credentials}, {dataSources}) => {
+        logIn: async(_, {credentials}, {dataSources}) => {
             dataSources.authAPI.authRequest(credentials)
         },
-        refreshToken:(_, {token}, {dataSources}) => {
+        refreshToken: async(_, {token}, {dataSources}) => {
             dataSources.authAPI.refreshToken(token)
         }
     }
