@@ -1,6 +1,6 @@
 const usersResolver = {
     Query: {
-        userDetailById: async(_, {id}, { dataSources, userIdToken}) => {
+        userDetailById: async(_, { id }, { dataSources, userIdToken }) => {
             if(id == userIdToken)
                 return await dataSources.authAPI.getUser(id);
             else
@@ -8,7 +8,7 @@ const usersResolver = {
         }
     },
     Mutation: {
-        signUpUser: async(_, {userInput}, { dataSources }) => {
+        signUpUser: async(_, { userInput }, { dataSources }) => {
             const authInput = {
                 name: userInput.name,
                 tipo_documento: userInput.tipo_documento,
@@ -19,10 +19,10 @@ const usersResolver = {
             }
             return await dataSources.authAPI.createUser(authInput);
         },
-        logIn: async(_, {credentials}, {dataSources}) => 
+        logIn: async(_, { credentials }, { dataSources }) => 
             dataSources.authAPI.authRequest(credentials),
 
-        refreshToken: async(_, {token}, {dataSources}) => 
+        refreshToken: async(_, { token }, { dataSources }) => 
             dataSources.authAPI.refreshToken(token)        
     }
 };
