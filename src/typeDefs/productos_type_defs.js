@@ -37,13 +37,13 @@ const productTypeDefs = gql `
 
     extend type Query{
         productById(id:String!): Product
-        inventarioByMedicamento(nombreMedicamento:String!): Inventario
+        inventarioByMedicamento(nombreMedicamento:String!): [Inventario]
     }    
 
     extend type Mutation{
         createProduct(producto: Product!): Product
         updateProduct(producto: ProductUpdate!): Product
-        deleteProduct(laboratorio:String!): String!
+        deleteProduct(id:String!): String!
     }    
 `;
 

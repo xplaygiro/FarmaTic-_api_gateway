@@ -1,7 +1,7 @@
 const pedidosResolver = {
     Query: {
         pedidoById: async(_, { id }, { dataSources }) => {
-            //idToken = (await dataSources.inventarioAPI.getPedidoById()).id
+            //idToken = (await dataSources.inventarioAPI.getPedidoById(id)).id
             //if(id == idToken)
                 return await dataSources.inventarioAPI.getPedidoById(id);
             //else
