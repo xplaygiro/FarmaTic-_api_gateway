@@ -1,16 +1,12 @@
 const pedidosResolver = {
     Query: {
-        pedidoById: async(_, { id }, { dataSources }) => {
-            //idToken = (await dataSources.inventarioAPI.getPedidoById(id)).id
-            //if(id == idToken)
-                return await dataSources.inventarioAPI.getPedidoById(id);
-            //else
-            //    return null;
+        pedidoById: async (_, { id }, { dataSources }) => {
+            return await dataSources.inventarioAPI.getPedidoById(id);
         }
 
     },
     Mutation: {
-        createPedido: async(_, { pedido }, { dataSources }) => {
+        createPedido: async (_, { pedido }, { dataSources }) => {
             const pedidoInput = {
                 id: pedido.id,
                 fecha: pedido.fecha,

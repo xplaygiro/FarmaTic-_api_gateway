@@ -1,15 +1,15 @@
 const productosResolver = {
     Query: {
-        productById: async(_, {id}, { dataSources }) => {
+        productById: async (_, { id }, { dataSources }) => {
             return await dataSources.inventarioAPI.getProductoById(id);
 
         },
-        inventarioByMedicamento: async(_, { nombreMedicamento }, { dataSources }) => {
+        inventarioByMedicamento: async (_, { nombreMedicamento }, { dataSources }) => {
             return await dataSources.inventarioAPI.getInventarioByMedicamento(nombreMedicamento);
         }
     },
     Mutation: {
-        createProduct: async(_, { producto }, { dataSources }) => {
+        createProduct: async (_, { producto }, { dataSources }) => {
             const productInput = {
                 id: producto.id,
                 laboratorio: producto.laboratorio,
@@ -25,11 +25,10 @@ const productosResolver = {
             return await dataSources.inventarioAPI.createProducto(productInput);
 
         },
-        updateProduct: async(_, { producto }, { dataSources }) => {
-            //prodUpToken = (await dataSources.inventarioAPI.getProductoById(producto)).id
-            //if()
-            const productUpdate = { 
-                id: producto.id,               
+        updateProduct: async (_, { producto }, { dataSources }) => {
+
+            const productUpdate = {
+                id: producto.id,
                 laboratorio: producto.laboratorio,
                 nombreMedicamento: producto.nombreMedicamento,
                 concentracion: producto.concentracion,
@@ -43,7 +42,7 @@ const productosResolver = {
             return await dataSources.inventarioAPI.createProducto(productUpdate);
 
         },
-        deleteProduct: async(_, { id }, { dataSources }) => {
+        deleteProduct: async (_, { id }, { dataSources }) => {
             return await dataSources.inventarioAPI.deleteProducto(id);
         }
     }

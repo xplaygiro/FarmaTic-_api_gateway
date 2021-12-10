@@ -29,14 +29,14 @@ const authTypeDefs = gql`
         username: String!
         }
 
-    extend type Query {
-        userDetailById(id:Int!):UserDetail
+    type Query {
+        userDetailById(id: Int!): UserDetail!
     }
 
-    extend type Mutation {
-        signUpUser(userInput :$SignUpInput): Tokens!
-        logIn(credentials: $CredentialsInput!): Tokens!
-        refreshToken(token: String!): Access!
+    type Mutation {
+        signUpUser(userInput :SignUpInput): Tokens!
+        logIn(credentials: CredentialsInput!): Tokens!
+        refreshToken(refresh: String!): Access!
     }    
 `;
 module.exports = authTypeDefs;

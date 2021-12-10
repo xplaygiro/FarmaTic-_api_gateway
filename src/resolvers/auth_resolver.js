@@ -4,8 +4,8 @@ const usersResolver = {
             if(id == userIdToken)
                 return await dataSources.authAPI.getUser(id);
             else
-                return null;
-        }
+                return null
+        },
     },
     Mutation: {
         signUpUser: async(_, { userInput }, { dataSources }) => {
@@ -22,8 +22,8 @@ const usersResolver = {
         logIn: async(_, { credentials }, { dataSources }) => 
             dataSources.authAPI.authRequest(credentials),
 
-        refreshToken: async(_, { token }, { dataSources }) => 
-            dataSources.authAPI.refreshToken(token)        
+        refreshToken: async(_, { refresh }, { dataSources }) => 
+            dataSources.authAPI.refreshToken(refresh)       
     }
 };
 

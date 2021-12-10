@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server')
+const { gql } = require('apollo-server');
 
 const productTypeDefs = gql `
     type Product {
@@ -41,8 +41,8 @@ const productTypeDefs = gql `
     }    
 
     extend type Mutation{
-        createProduct(producto: Product!): Product
-        updateProduct(producto: ProductUpdate!): Product
+        createProduct(producto: Product!): Product!
+        updateProduct(producto: ProductUpdate!): Product!
         deleteProduct(id:String!): String!
     }    
 `;

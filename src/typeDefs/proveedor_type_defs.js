@@ -1,23 +1,23 @@
-const { gql } = require('apollo-server')
+const { gql } = require('apollo-server');
 
 const proveedorTypeDefs = gql`
 
     type Proveedor{
-        laboratorio     : String!;
-        nombreDeContacto: String!;
-        email           : String!;
-        direccion       : String!;
-        telefono        : Int!;
-        celular         : Int!;
+        laboratorio     : String!
+        nombreDeContacto: String!
+        email           : String!
+        direccion       : String!
+        telefono        : Int!
+        celular         : Int!
     }
 
     type ProveedorUpdate{
-        laboratorio     : String!;
-        nombreDeContacto: String;
-        email           : String;
-        direccion       : String;
-        telefono        : Int;
-        celular         : Int;
+        laboratorio     : String!
+        nombreDeContacto: String
+        email           : String
+        direccion       : String
+        telefono        : Int
+        celular         : Int
     }
 
     type ProveedorList {
@@ -34,10 +34,10 @@ const proveedorTypeDefs = gql`
     }    
 
     extend type Mutation{
-        createProveedor(proveedor: Proveedor!)      : Proveedor
-        updateProveedor(proveedor: ProveedorUpdate!): Proveedor
+        createProveedor(proveedor: Proveedor!)      : Proveedor!
+        updateProveedor(proveedor: ProveedorUpdate!): Proveedor!
         deleteProveedor(id:String!)                 : String!
     }   
 `;
 
-module.exports = proveedorTypeDefs
+module.exports = proveedorTypeDefs;

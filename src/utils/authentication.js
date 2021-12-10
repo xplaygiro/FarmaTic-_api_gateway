@@ -1,6 +1,6 @@
-const { ApolloError }   = require('apollo-server');
-const serverConfig      = require('../server');
-const fetch             = require('node-fetch');
+const { ApolloError } = require('apollo-server');
+const serverConfig = require('../server');
+const fetch = require('node-fetch');
 
 const authentication = async ({ req }) => {
     const token = req.headers.authorization || '';
@@ -12,7 +12,7 @@ const authentication = async ({ req }) => {
         try {
             let requestOptions = {
                 method   : 'POST',
-                headers  : { "Content-Type": "aplication/json" },
+                headers  : { "Content-Type": "application/json" },
                 body     : JSON.stringify({ token }),
                 redirect : 'follow'
             };

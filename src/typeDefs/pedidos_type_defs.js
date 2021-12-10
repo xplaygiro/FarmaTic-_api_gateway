@@ -1,33 +1,33 @@
-const { gql } = require('apollo-server')
+const { gql } = require('apollo-server');
 
-const orderTypeDefs = gql`
+const pedidosTypeDefs = gql`
 
     type Pedido{
-        id             : String!;
-        fecha          : String!;
-        productoDestino: String!;
-        proveedorOrigen: String!;
-        cantidad       : Int!;
-        precio         : Int!;
+        id             : String!
+        fecha          : String!
+        productoDestino: String!
+        proveedorOrigen: String!
+        cantidad       : Int!
+        precio         : Int!
     }
 
     type PedidoUpdate{
-        id             : String!;
-        fecha          : String;
-        productoDestino: String;
-        proveedorOrigen: String;
-        cantidad       : Int;
-        precio         : Int;
+        id             : String!
+        fecha          : String
+        productoDestino: String
+        proveedorOrigen: String
+        cantidad       : Int
+        precio         : Int
     }
 
     extend type Query{
-        pedidoById(id:String!): Pedido
+        pedidoById(id:String!): Pedido!
     }    
 
     extend type Mutation{
-        createPedido(pedido: Pedido!): Pedido
+        createPedido(pedido: Pedido!): Pedido!
     }   
 
 `;
 
-module.exports = orderTypeDefs
+module.exports = pedidosTypeDefs;
