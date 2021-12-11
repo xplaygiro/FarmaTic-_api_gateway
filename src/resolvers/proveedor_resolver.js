@@ -1,9 +1,9 @@
 const proveedorResolver = {
     Query: {
-        proveedorByLaboratorio:async(_, { laboratorio }, { dataSources }) => {
+        proveedorByLaboratorio: async (_, { laboratorio }, { dataSources }) => {
             return await dataSources.inventarioAPI.getProveedorByLaboratorio(laboratorio);
         },
-        proveedorListByLaboratorio:async(_, {laboratorio}, {dataSources}) => {
+        proveedorListByLaboratorio: async (_, { laboratorio }, { dataSources }) => {
             return await dataSources.inventarioAPI.getListProveedor(laboratorio);
         }
     },
@@ -11,10 +11,10 @@ const proveedorResolver = {
         createProveedor:async(_, {proveedor}, {dataSources}) => {
             return await dataSources.inventarioAPI.createProveedor(proveedor);
         },
-        updateProveedor:async(_, {proveedor}, {dataSources}) => {
+        updateProveedor: async (_, { proveedor }, { dataSources }) => {
             return await dataSources.inventarioAPI.updateProveedor(proveedor);
         },
-        deleteProveedor:async(_, {id}, {dataSources}) => {
+        deleteProveedor: async (_, { id }, { dataSources }) => {
             return await dataSources.inventarioAPI.deleteProveedor(id);
         }
     }
