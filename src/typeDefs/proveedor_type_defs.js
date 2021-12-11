@@ -11,7 +11,16 @@ const proveedorTypeDefs = gql`
         celular         : Int!
     }
 
-    type ProveedorUpdate{
+    input ProveedorInput{
+        laboratorio     : String!
+        nombreDeContacto: String!
+        email           : String!
+        direccion       : String!
+        telefono        : Int!
+        celular         : Int!
+    }
+
+    input ProveedorUpdate{
         laboratorio     : String!
         nombreDeContacto: String
         email           : String
@@ -34,7 +43,7 @@ const proveedorTypeDefs = gql`
     }    
 
     extend type Mutation{
-        createProveedor(proveedor: Proveedor!)      : Proveedor!
+        createProveedor(proveedor: ProveedorInput!) : Proveedor!
         updateProveedor(proveedor: ProveedorUpdate!): Proveedor!
         deleteProveedor(id:String!)                 : String!
     }   

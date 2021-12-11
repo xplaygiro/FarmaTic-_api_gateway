@@ -11,6 +11,15 @@ const pedidosTypeDefs = gql`
         precio         : Int!
     }
 
+    input PedidoInput{
+        id             : String!
+        fecha          : String!
+        productoDestino: String!
+        proveedorOrigen: String!
+        cantidad       : Int!
+        precio         : Int!
+    }
+
     type PedidoUpdate{
         id             : String!
         fecha          : String
@@ -25,7 +34,7 @@ const pedidosTypeDefs = gql`
     }    
 
     extend type Mutation{
-        createPedido(pedido: Pedido!): Pedido!
+        createPedido(pedido: PedidoInput!): Pedido!
     }   
 
 `;

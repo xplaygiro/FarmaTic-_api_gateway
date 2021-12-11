@@ -14,7 +14,20 @@ const productTypeDefs = gql `
         precioVenta      : Int!
     }
 
-    type ProductUpdate {
+    input ProductInput {
+        id               : String!
+        laboratorio      : String!
+        nombreMedicamento: String!
+        concentracion    : String!
+        presentacion     : String!
+        cantidad         : Int!
+        fechaVencimiento : String!
+        fechaFabricacion : String!
+        precioCosto      : Int!
+        precioVenta      : Int!
+    }
+
+    input ProductUpdate {
         id               : String!
         laboratorio      : String
         nombreMedicamento: String
@@ -41,7 +54,7 @@ const productTypeDefs = gql `
     }    
 
     extend type Mutation{
-        createProduct(producto: Product!): Product!
+        createProduct(producto: ProductInput!): Product!
         updateProduct(producto: ProductUpdate!): Product!
         deleteProduct(id:String!): String!
     }    
