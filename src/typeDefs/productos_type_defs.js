@@ -48,7 +48,7 @@ const productTypeDefs = gql `
         cantidad         : Int!
     }
 
-    extend type Query{
+    type Query{
         productById(id:String!): Product
         inventarioByMedicamento(nombreMedicamento:String!): [Inventario]
     }    

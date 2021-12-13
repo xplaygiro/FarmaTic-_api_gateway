@@ -29,8 +29,7 @@ const proveedorTypeDefs = gql`
         celular         : Int
     }
 
-    type ProveedorList {
-        id               : String!
+    type ProveedorList {        
         laboratorio      : String!
         nombreDeContacto : String!
         email            : String!

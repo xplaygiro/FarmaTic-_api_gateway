@@ -24,9 +24,8 @@ const authTypeDefs = gql`
         password      : String!        
     } 
 
-    type UserDetail {
-        id: Int!
-        username: String!
+    type UserDetail {        
+        username      : String!
         }
 
     type Query {

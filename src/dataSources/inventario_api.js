@@ -50,7 +50,7 @@ class InventarioAPI extends RESTDataSource {
     }
 
     async getInventarioByMedicamento(nombreMedicamento){
-        return await this.get(`/producto/${nombreMedicamento}`);
+        return await this.get(`/productos/${nombreMedicamento}`);
     }
 
     async createPedido(Pedido){

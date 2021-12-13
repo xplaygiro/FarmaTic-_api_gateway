@@ -11,10 +11,10 @@ const authentication = async ({ req }) => {
     else {
         try {
             let requestOptions = {
-                method   : 'POST',
-                headers  : { "Content-Type": "application/json" },
-                body     : JSON.stringify({ token }),
-                redirect : 'follow'
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ token }),
+                redirect: 'follow'
             };
 
             let response = await fetch(
@@ -26,7 +26,7 @@ const authentication = async ({ req }) => {
                 throw new ApolloError(`Sesión fallida o inactiva - ${401}` + response.status, 401)
             }
 
-            return { userIdToken: (await response.json()).id };
+            return { userIdToken: (await response.json()).UserId };
         }
 
         catch (error) {

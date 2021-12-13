@@ -9,7 +9,15 @@ const proveedorResolver = {
     },
     Mutation: {
         createProveedor:async(_, {proveedor}, {dataSources}) => {
-            return await dataSources.inventarioAPI.createProveedor(proveedor);
+            const proveedorInput = {
+                laboratorio: proveedor.laboratorio,
+                nombreDeContacto: proveedor.nombreDeContacto,
+                email: proveedor.email,
+                direccion: proveedor.direccion,
+                telefono: proveedor.telefono,
+                celular: proveedor.celular
+            }
+            return await dataSources.inventarioAPI.createProveedor(proveedorInput);
         },
         updateProveedor: async (_, { proveedor }, { dataSources }) => {
             return await dataSources.inventarioAPI.updateProveedor(proveedor);
