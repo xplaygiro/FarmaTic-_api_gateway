@@ -49,7 +49,7 @@ const productTypeDefs = gql `
     }
 
     type Query{
-        productById(id:String!): Product
+        productById(id:Int!): Product
         inventarioByMedicamento(nombreMedicamento:String!): [Inventario]
     }    
 

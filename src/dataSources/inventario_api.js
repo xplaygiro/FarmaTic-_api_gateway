@@ -16,7 +16,7 @@ class InventarioAPI extends RESTDataSource {
     
     async updateProveedor(Proveedor){
         Proveedor = new Object(JSON.parse(JSON.stringify(Proveedor)));
-        return await this.put(`/proveedores`, Proveedor);
+        return await this.post(`/proveedores`, Proveedor);
     }
     
     async deleteProveedor(id){
@@ -38,7 +38,7 @@ class InventarioAPI extends RESTDataSource {
 
     async updateProducto(Product){
         Product = new Object(JSON.parse(JSON.stringify(Product)));
-        return await this.put(`/producto`, Product);
+        return await this.post(`/producto`, Product);
     }
 
     async deleteProducto(id){

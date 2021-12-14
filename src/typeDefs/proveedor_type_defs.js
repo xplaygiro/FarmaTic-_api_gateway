@@ -42,7 +42,7 @@ const proveedorTypeDefs = gql`
     }    
 
     extend type Mutation{
-        createProveedor(proveedor: ProveedorInput) : Proveedor!
+        createProveedor(proveedor: ProveedorInput)  : Proveedor!
         updateProveedor(proveedor: ProveedorUpdate!): Proveedor!
         deleteProveedor(id:String!)                 : String!
     }   
